@@ -74,26 +74,7 @@ void postorder(Node* root) {
     cout << root->data << " ";
 }
 
-// Level order: Level by level
-void levelOrder(Node* root) {
-    if (root == nullptr) return;
 
-    queue<Node*> q;
-    q.push(root);
-
-    while (!q.empty()) {
-        Node* curr = q.front();
-        q.pop();
-
-        cout << curr->data << " ";
-
-        if (curr->left != nullptr)
-            q.push(curr->left);
-
-        if (curr->right != nullptr)
-            q.push(curr->right);
-    }
-}
 
 int main() {
     vector<int> arr = {1, 2, 3, 4, 5, 6, 7};
@@ -109,8 +90,7 @@ int main() {
     cout << "\nPostorder: ";
     postorder(root);
 
-    cout << "\nLevel Order: ";
-    levelOrder(root);
+   
 
     cout << endl;
     return 0;
